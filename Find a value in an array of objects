@@ -1,0 +1,23 @@
+// Finding the object by one of the property array element:
+Code:
+let arr = [
+    { name:"string 1", value:"this", other: "that" },
+    { name:"string 2", value:"this", other: "that" }
+];
+let obj = arr.find(o => o.name === 'string 1');
+console.log(obj);
+
+
+//Replacing the array element:
+Code:
+let arr = [
+    { name:"string 1", value:"this", other: "that" },
+    { name:"string 2", value:"this", other: "that" }
+];
+let obj = arr.find((o, i) => {
+    if (o.name === 'string 1') {
+        arr[i] = { name: 'new string', value: 'this', other: 'that' };
+        return true; // stop searching
+    }
+});
+console.log(arr);
