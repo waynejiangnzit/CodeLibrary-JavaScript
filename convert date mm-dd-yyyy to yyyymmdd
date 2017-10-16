@@ -1,0 +1,15 @@
+//*-----------------------
+//Write a function that converts user entered date formatted as M/D/YYYY to a format required by an API (YYYYMMDD). The parameter "userDate" and the return value are strings.
+//For example, it should convert user entered date "12/31/2014" to "20141231" suitable for the API.
+//*---------------------------
+
+function formatDate(userDate) {
+  // format from M/D/YYYY to YYYYMMDD
+  
+  var arr = userDate.split("/");
+  var m = (arr[0].length == 1) ? "0" + arr[0] : arr[0]; 
+  var d = (arr[1].length == 1) ? "0" + arr[1] : arr[1];
+  return arr[2] + m + d; 
+}
+
+console.log(formatDate("12/31/2014"));
