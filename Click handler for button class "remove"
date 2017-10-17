@@ -1,0 +1,21 @@
+JS part:
+// Implement the click handler here for button of class 'remove'
+var els = document.getElementsByClassName('remove');
+
+for (var i = 0; i < els.length; i++) {
+  els[i].addEventListener('click', function () {
+    this.parentNode.remove();
+  });
+}
+
+HTML part:
+<body>
+  <div class="image">
+    <img src="https://blog.iandreev.com/wp-content/uploads/2016/09/code.jpg" alt="First">
+    <button class="remove">X</button>
+  </div>
+  <div class="image">
+    <img src="https://d1o50x50snmhul.cloudfront.net/wp-content/uploads/2017/02/22180000/ff3ywn-1-800x533.jpg" alt="Second">
+    <button class="remove">X</button>
+  </div>
+</body>
