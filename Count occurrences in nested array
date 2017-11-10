@@ -1,0 +1,29 @@
+The program uses a data structure with an array that can contain items and other arrays. 
+Write a function that recursively passes through all arrays and counts the number of occurrences of a given item.
+Keep in mind that arrays can be nested with each other.
+For example, loop(arr, "apple") for the array below should return 2.
+var arr = [
+    "apple",
+    ["banana", "strawberry", "apple"]
+];
+
+The function:
+
+var names = ["bob", ["steve", "michael", "bob", "chris"]];
+
+function loop(arr, item) {
+  var result = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] instanceof Array) {
+      result += loop(arr[i], item);
+    } else {
+      if (arr[i] == item) {
+        result++;
+      }
+    }
+  }
+  return result;    
+}
+
+var result = loop(names, "bob");
+console.log(result);
