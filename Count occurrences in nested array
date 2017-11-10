@@ -14,9 +14,9 @@ var names = ["bob", ["steve", "michael", "bob", "chris"]];
 function loop(arr, item) {
   var result = 0;
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i] instanceof Array) {
-      result += loop(arr[i], item);
-    } else {
+    if (arr[i] instanceof Array) {                 //Find out arr[i] is nested array or not
+      result += loop(arr[i], item);                //If arr[i] is array, go recursive
+    } else {                                       //If arr[i] is not array, go count occurrence
       if (arr[i] == item) {
         result++;
       }
