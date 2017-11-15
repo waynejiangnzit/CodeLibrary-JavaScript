@@ -1,0 +1,26 @@
+The function startStopwatch takes two arguments: a callback function (callback) and a time interval (interval). 
+It should call the callback every interval milliseconds. 
+The callback receives the counter parameter and should return true 
+if the stopwatch continues operating or false if the stopwatch should stop operating. 
+Interval milliseconds after the stopwatch is started, the callback should be called for the first time. 
+The first time the callback is called, the counter should equal 1, the second time it should equal 2, and so on.
+The stopwatch should allow other code to be executed during the wait time, and multiple stopwatches should be allowed to coexist.
+
+function startStopwatch(callback, interval) {
+ // Write the code that goes here
+  var counter=0;                                    //set counter parameter
+  var test = setInterval(function(){
+  counter++;
+  if(!callback(counter)){                          //If callback is true, keep going,
+    clearInterval(test);                           //If callback is false, stop the interval
+  }
+},interval);
+}
+
+function callback(counter) {
+ console.log(counter);
+ return counter < 5;                             //If counter smaller then the number, return true, else return false
+}
+
+// Expected: 1, 2, 3, 4, 5 with 50ms interval.
+startStopwatch(callback, 50);                    //Every 50 milliseconds call the function
