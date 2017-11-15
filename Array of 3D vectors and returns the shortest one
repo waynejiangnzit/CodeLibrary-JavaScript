@@ -1,0 +1,28 @@
+Write a function that takes an array of 3D vectors and returns the shortest one. 
+Each vector is represented with an array that contains 3 elements (x, y and z).
+If multiple vectors have the same length, the function should return any one of them.
+To determine the length of a vector use the formula: √( x*x + y*y + z*z)  .
+For example, for the array of 3D vectors [ [1, 1, 1], [2, 2, 2], [3, 3, 3] ] 
+findShortest should return the first vector (array [1, 1, 1]) because it is the shortest.
+
+function findShortest(arr) {
+ // Write the code that goes here
+   var lengths = new Array();
+   for(var i=0; i<arr.length; i++){
+       lengths.push(Math.sqrt(arr[i][0] * arr[i][0] + arr[i][1]  * arr[i][1]  + arr[i][2] * arr[i][2]));
+   }
+   var index = 0;
+   var temp = lengths[0];
+   for(var i=1; i<lengths.length; i++){
+       if(temp > lengths[i]){
+           temp = lengths[i];
+           index = i;
+       }
+   }
+   return arr[index];
+}
+
+var arr = [[1, 1, 1], [2, 2, 2], [3, 3, 3]];
+var shortest = findShortest(arr);
+// Expected output: 1,1,1
+console.log(shortest);
