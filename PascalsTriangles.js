@@ -60,4 +60,5 @@ start = new Date().getMilliseconds();
 var triangle = pascalSimple(numTiers);
 stop = new Date().getMilliseconds();
 executionTime = stop - start;
+console.log(triangle);
 console.log('Execution time: ' + executionTime + '\n');
